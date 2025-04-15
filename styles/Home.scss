@@ -1,0 +1,227 @@
+.home-page {
+    padding-top: 14px;
+  }
+  
+  .hero-section {
+    /*background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);*/
+    /*padding: 120px 0; */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-slide {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .slick-dots li button:before {
+    color: #3b82f6 !important;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: #3b82f6 !important;
+  }
+  .feature-card {
+    padding: 24px;
+    height: 100%;
+    transition: transform 0.2s ease;
+    text-align: center;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: #0d6aa3;
+  }
+  
+  .feature-icon svg {
+    font-size: 48px;
+  }
+  
+  .banner-section {
+    width: 100%;
+    background: #f8fafc;
+  }
+  
+  .banner-slider {
+    width: 100%;
+    height: 600px;
+  }
+  
+  .banner-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .banner-text {
+    max-width: 800px;
+    padding: 40px 0;
+    margin: 0 auto;
+  }
+  
+  .banner-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .banner-title {
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 24px !important;
+    color: #1f2937;
+    line-height: 1.2 !important;
+  }
+  
+  .banner-description {
+    font-size: 1.25rem !important;
+    color: #4b5563;
+    margin-bottom: 32px !important;
+    font-weight: 400 !important;
+  }
+  
+  .banner-buttons {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .banner-buttons button {
+    padding: 12px 24px;
+    font-weight: 500;
+    text-transform: none;
+  }
+  .slick-dots {
+    bottom: 15px !important;  /* Adjust the position of dots */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .slick-dots li {
+    margin: 0 5px;  /* Add spacing between dots */
+  }
+  
+  .slick-dots li button:before {
+    color: #0d6aa3 !important;  /* Make dots more visible */
+    font-size: 14px !important;
+    opacity: 1 !important;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: white !important; /* Highlight active dot */
+  }
+  
+  
+  
+  
+  /* Swiper custom styles */
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #e5e7eb;
+    opacity: 1;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #3b82f6;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #3b82f6;
+  }
+  
+  @media (max-width: 768px) {
+    .banner-slider {
+      height: 500px;
+    }
+  
+    .banner-title {
+      font-size: 2.5rem !important;
+    }
+  
+    .banner-description {
+      font-size: 1.125rem !important;
+    }
+  
+    .banner-buttons {
+      flex-direction: column;
+    }
+  
+    .banner-buttons button {
+      width: 100%;
+    }
+  }
+  
+  .testimonials-section {
+    background: #f8fafc;
+    padding: 80px 0;
+  }
+  
+  .testimonial-card {
+    padding: 32px;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .testimonial-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+  }
+  
+  .analytics-section {
+    padding: 80px 0;
+  }
+  
+  .analytics-card {
+    padding: 24px;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+    border-radius: 12px;
+  }
+  
+  .analytics-number {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+  }
+  .comp-space{
+    padding:5rem 0;
+  }
+   .comp-color{
+    background-color:#f5f5f5;
+   }
+
+   
+
+   /******************************************service css***********************************************************/
+   .kitchen-icon-bg{
+    background-color: #1976d2;
+    color: white;
+   
+   }
+   .kitchen-hero{
+    background-color:#5399be2e;
+    padding :5rem 0;
+   }
+   .service-banner{
+      padding:1.5rem 2.5rem; 
+      text-align: center;
+   }

@@ -1,0 +1,19 @@
+/* About page specific styles */
+.aboutContainer {
+  /* styles */
+}
+
+.aboutHero {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.teamSection {
+  padding: 4rem 0;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}

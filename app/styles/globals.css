@@ -1,0 +1,92 @@
+/* Reset and Base Styles */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background: #ffffff;
+  --text-color: #333333;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background);
+  line-height: 1.5;
+}
+
+/* Remove default focus outline and add custom one */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Media Query Optimization */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --text-color: #ffffff;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Remove tap highlight on mobile */
+@media (hover: none) {
+  a:hover {
+    color: inherit;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: none;
+    color: #000;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}

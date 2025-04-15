@@ -1,0 +1,13 @@
+.contactForm {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.map {
+  height: 400px;
+  margin: 2rem 0;
+}

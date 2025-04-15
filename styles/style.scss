@@ -1,0 +1,14 @@
+// Replace @import with @use
+@use "./Header";
+@use "./About";
+@use "./AdminDashbaord";
+@import "./Blog.scss";
+@import "./CmsLogin.scss";
+@import "./CMSStyles/CmsBlog.scss";
+@import "./CommonStyles.scss";
+@import "./Gallary.scss";
+@import "./Footer.scss";
+@import "./HelpCenter.scss";
+@import "./Home.scss";
+@import "./Login.scss";
+@import "./Sidebar.scss";

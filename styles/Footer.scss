@@ -1,0 +1,51 @@
+.footer {
+  background-color: #0c669e;
+  padding: 64px 0 32px;
+  margin-top: 64px;
+  color: white;
+}
+
+.footer-brand {
+  margin-bottom: 32px;
+}
+
+.footer-font-color,
+.footer-font-color a,
+.footer-font-color a:hover,
+.footer-font-color a:visited {
+  color: white !important;
+  text-decoration: none;
+}
+
+.footer-icon {
+  color: white !important;
+
+}
+.footer-description {
+  color: white;
+  margin: 16px 0;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.footer ul li {
+  margin: 8px 0;
+}
+
+.footer ul li a {
+  color: white !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer ul li a:hover {
+  color: #f1f1f1;
+}
+.footer-logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 16px;
+}
