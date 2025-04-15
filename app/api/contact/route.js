@@ -42,7 +42,7 @@ export const POST = async (req) => {
 
     const mailOptions = {
       from: `${email}`,
-      to: "support@fritado.com",
+      to: "support@a2zhome-solutions.com",
       subject: formType === "Enquiry" ? "New Contact Request" : "New Sales Enquiry",
       text: `A new ${formType} request has been submitted: 
              Name: ${firstname} ${lastname}

@@ -1,16 +1,15 @@
-import DemoForm from "../../../src/Models/Demo/Demo"; 
+import DemoForm from "../../../src/Models/Demo/Demo";
 import nodemailer from "nodemailer";
 import dbConnect from "../../../src/lib/database";
 import { NextResponse } from "next/server";
 
 // POST - Submit demo form request and send email
 export const POST = async (req) => {
-  
   try {
-    await dbConnect(); 
-    
+    await dbConnect();
+
     const body = await req.json();
-  
+
     const {
       firstname,
       lastname,
@@ -62,7 +61,7 @@ export const POST = async (req) => {
 
     const mailOptions = {
       from: `${email}`,
-      to: "support@fritado.com",
+      to: "support@a2zhome-solutions.com",
       subject: formType === "demo" ? "New Demo Request" : "New Sales Enquiry",
       text: `A new ${formType} request has been submitted: 
              Name: ${firstname} ${lastname}
@@ -74,10 +73,14 @@ export const POST = async (req) => {
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ message: "Form submitted successfully and email sent." });
+    return NextResponse.json({
+      message: "Form submitted successfully and email sent.",
+    });
   } catch (error) {
     console.log(error, "An error occurred while submitting the form");
-    return NextResponse.json({ error: "An error occurred while submitting the form." });
+    return NextResponse.json({
+      error: "An error occurred while submitting the form.",
+    });
   }
 };
 
@@ -90,6 +93,8 @@ export const GET = async () => {
     return NextResponse.json(demoForms);
   } catch (error) {
     console.log(error, "An error occurred while fetching the demo forms");
-    return NextResponse.json({ error: "An error occurred while fetching the demo forms." });
+    return NextResponse.json({
+      error: "An error occurred while fetching the demo forms.",
+    });
   }
 };
