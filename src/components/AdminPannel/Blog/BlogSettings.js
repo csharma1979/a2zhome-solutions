@@ -9,7 +9,7 @@ import {
   fetchBlogs,
   deleteBlog,
 } from "../../../lib/services/BlogService/BlogsService";
-import { Button } from "@mui/material";
+
 
 const BlogSettings = () => {
   const [showModal, setShowModal] = useState(false);
@@ -86,6 +86,7 @@ const BlogSettings = () => {
         {showModal && (
           <div className="modal-overlay">
             <div>
+            {console.log("Opening modal with:", editBlog)}
               <BlogModal
                 onCloseModal={handleCloseModal}
                 onBlogSave={handleBlogSave}

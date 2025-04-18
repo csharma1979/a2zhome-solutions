@@ -96,63 +96,63 @@ export async function GET() {
   }
 }
 
-export async function PUT(req) {
-  try {
-    await dbConnect();
-    const formData = await req.formData();
+// export async function PUT(req) {
+//   try {
+//     await dbConnect();
+//     const formData = await req.formData();
 
-    const id = formData.get("id");
-    if (!id) {
-      return NextResponse.json({ message: "Blog ID is required" }, { status: 400 });
-    }
+//     const id = formData.get("id");
+//     if (!id) {
+//       return NextResponse.json({ message: "Blog ID is required" }, { status: 400 });
+//     }
 
-    const blogTopic = formData.get("blogTopic");
-    const blogCategory = formData.get("blogCategory");
-    const keywords = formData.get("keywords")?.split(",").map((kw) => kw.trim()) || [];
-    const videoUrl = formData.get("videoUrl") || "";
-    const blogDescription = formData.get("blogDescription");
-    const status = formData.get("status") || "Draft";
-    const file = formData.get("uploadImage");
+//     const blogTopic = formData.get("blogTopic");
+//     const blogCategory = formData.get("blogCategory");
+//     const keywords = formData.get("keywords")?.split(",").map((kw) => kw.trim()) || [];
+//     const videoUrl = formData.get("videoUrl") || "";
+//     const blogDescription = formData.get("blogDescription");
+//     const status = formData.get("status") || "Draft";
+//     const file = formData.get("uploadImage");
 
-    const existingBlog = await Blog.findById(id);
-    if (!existingBlog) {
-      return NextResponse.json({ message: "Blog not found" }, { status: 404 });
-    }
+//     const existingBlog = await Blog.findById(id);
+//     if (!existingBlog) {
+//       return NextResponse.json({ message: "Blog not found" }, { status: 404 });
+//     }
 
-    let uploadImage = existingBlog.uploadImage;
-    if (file && file.name) {
-      const uploadDir = "public/uploads";
-      await fs.mkdir(uploadDir, { recursive: true });
-      const filePath = `${uploadDir}/${Date.now()}${path.extname(file.name)}`;
-      const bytes = await file.arrayBuffer();
-      await fs.writeFile(filePath, Buffer.from(bytes));
-      uploadImage = filePath.replace("public/", "");
-    }
+//     let uploadImage = existingBlog.uploadImage;
+//     if (file && file.name) {
+//       const uploadDir = "public/uploads";
+//       await fs.mkdir(uploadDir, { recursive: true });
+//       const filePath = `${uploadDir}/${Date.now()}${path.extname(file.name)}`;
+//       const bytes = await file.arrayBuffer();
+//       await fs.writeFile(filePath, Buffer.from(bytes));
+//       uploadImage = filePath.replace("public/", "");
+//     }
 
-    const updatedData = {
-      blogTopic,
-      slug: slugify(blogTopic, { lower: true, strict: true }),
-      blogCategory,
-      keywords,
-      uploadImage,
-      videoUrl,
-      blogDescription,
-      status,
-    };
+//     const updatedData = {
+//       blogTopic,
+//       slug: slugify(blogTopic, { lower: true, strict: true }),
+//       blogCategory,
+//       keywords,
+//       uploadImage,
+//       videoUrl,
+//       blogDescription,
+//       status,
+//     };
 
-    const updatedBlog = await Blog.findByIdAndUpdate(id, updatedData, { new: true });
-    return NextResponse.json(
-      { message: "Blog updated successfully", data: updatedBlog },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error("Error updating blog:", error);
-    return NextResponse.json(
-      { message: "Internal server error", error: error.message },
-      { status: 500 }
-    );
-  }
-}
+//     const updatedBlog = await Blog.findByIdAndUpdate(id, updatedData, { new: true });
+//     return NextResponse.json(
+//       { message: "Blog updated successfully", data: updatedBlog },
+//       { status: 200 }
+//     );
+//   } catch (error) {
+//     console.error("Error updating blog:", error);
+//     return NextResponse.json(
+//       { message: "Internal server error", error: error.message },
+//       { status: 500 }
+//     );
+//   }
+// }
 
 export async function DELETE(req) {
   const { searchParams } = new URL(req.url);

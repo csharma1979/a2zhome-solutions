@@ -8,17 +8,16 @@ import {
   saveBlog,
   updateBlog,
 } from "../../../lib/services/BlogService/BlogsService";
-import { Button } from "@mui/material";
 
 const BlogModal = ({ onCloseModal, onBlogSave, editBlog }) => {
   const editorRef = useRef();
   const [blogData, setBlogData] = useState({
-    blogTopic: "",
-    blogCategory: "",
-    keywords: "",
-    uploadImage: null,
+    blogTopic: editBlog?.blogTopic || "",
+    blogCategory: editBlog?.blogCategory || "",
+    keywords: editBlog?.keywords  || "",
+    uploadImage: editBlog?.uploadImage || null,
     videoUrl: "",
-    blogDescription: "",
+    blogDescription: editBlog?.blogDescription || "",
     status: "Draft",
   });
 
@@ -39,34 +38,39 @@ const BlogModal = ({ onCloseModal, onBlogSave, editBlog }) => {
 
   useEffect(() => {
     if (editBlog && Object.keys(editBlog).length > 0) {
-      setBlogData({
+      const initialData = {
         blogTopic: editBlog.blogTopic || "",
         blogCategory: editBlog.blogCategory || "",
-        keywords: editBlog.keywords ? editBlog.keywords.join(", ") : "",
+        keywords: editBlog.keywords?.join(", ") || "",
         uploadImage: null,
         videoUrl: editBlog.videoUrl || "",
         blogDescription: editBlog.blogDescription || "",
         status: editBlog.status || "Draft",
-      });
+      };
+      setBlogData(initialData);
+      if (editorRef.current) {
+        editorRef.current.getInstance().setHTML(editBlog.blogDescription || "");
+      }
     }
   }, [editBlog]);
 
   const handleSubmit = async (status) => {
     try {
       const updatedBlogData = { ...blogData, status };
-      updatedBlogData.keywords = updatedBlogData.keywords
-        .split(",")
-        .map((keyword) => keyword.trim());
-      let newBlog;
-      if (editBlog) {
-        // If we're editing, update the blog
-        newBlog = await updateBlog(editBlog._id, updatedBlogData);
-      } else {
-        console.log(blogData, "blogData");
-        newBlog = await saveBlog(blogData, status);
+      // updatedBlogData.keywords = updatedBlogData.keywords
+      //   .split(",")
+      //   .map((keyword) => keyword.trim());
+
+      updatedBlogData.keywords =
+        typeof updatedBlogData.keywords === "string"
+          ? updatedBlogData.keywords.split(",").map((keyword) => keyword.trim())
+          : updatedBlogData.keywords;
+
+      if (editBlog?.slug) {
+        const updated = await updateBlog(editBlog.slug, updatedBlogData);
+        onBlogSave(updated);
+        onCloseModal();
       }
-      onBlogSave(newBlog);
-      onCloseModal();
     } catch (error) {
       console.error("Error saving blog:", error.message);
     }
