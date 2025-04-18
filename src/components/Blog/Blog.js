@@ -60,7 +60,7 @@ const Blog = () => {
                   <div className="details">
                     <ul className="blog-meta">
                       <li className="blog-topic-author">
-                        {blog.publishedBy || "Admin"}
+                        {blog.publishedBy || "Fritado Ai"}
                       </li>
                       <li className="blog-topic-date">
                         <FaCalendarAlt /> {formatDate(blog.createdAt)}

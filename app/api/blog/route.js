@@ -20,8 +20,8 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
-
 const upload = multer({ storage });
+const uploadMiddleware = upload.single("uploadImage");
 
 export async function POST(req) {
   try {
