@@ -17,7 +17,7 @@ const Sidebar = ({sidebarShow}) => {
     <div className={`sidebar-container ${sidebarShow ? "open" : "closed"}`}>
       <Link href="/" className="nav-item border-bottom p-0">
         <img
-          src="/assets/white-logo.webp"
+          src="/assets/Fritado-logo.webp"
           alt="A2Zhome-Solutions"
           height={50}
           width={200}
