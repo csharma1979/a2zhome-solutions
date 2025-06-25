@@ -3,7 +3,7 @@ import HomeBanner from "../src/components/Home/HomeBanner"
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your One-Stop Solution for Professional Home Services",
+  title: "A2Z Home Solutions - Your One-Stop Solution for Professional Home Services",
   description:
     "Discover expert home services including plumbing, roofing, HVAC, electrical work, and more. Fast, reliable, and professional solutions tailored to your home improvement needs.",
 

@@ -155,7 +155,7 @@ export default function Header() {
             href="/contact"
             className="hidden md:flex items-center px-5 py-2.5 bg-[#0d6aa3] text-white rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow hover:shadow-md"
           >
-            Call now: +1- 832-312-5501
+            Call now: +1 (281) 845-1752
           </Link>
 
           {/* Mobile Menu Button */}
